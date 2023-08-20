@@ -23,6 +23,21 @@
       </div>
 
       <div class="field">
+      <%= f.label :prefecture_id %><br />
+      <%= f.select :prefecture_id, options_for_select(Prefecture.all.map { |p| [p.name, p.id] }) %>
+      </div>
+      
+      <div class="field">
+      <%= f.label :gender %><br />
+      <%= f.select :gender, [['Male', 1], ['Female', 2], ['Other', 3]] %>
+      </div>
+      
+      <div class="field">
+      <%= f.label :date_of_birth %><br />
+      <%= f.date_select :date_of_birth %>
+      </div>
+
+      <div class="field">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
