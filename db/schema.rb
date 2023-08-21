@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_20_110207) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_21_083409) do
+  create_table "posts", charset: "utf8", force: :cascade do |t|
+    t.string "hobby"
+    t.integer "required_time"
+    t.integer "budget"
+    t.integer "number_of_people"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
