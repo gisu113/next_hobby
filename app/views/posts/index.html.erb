@@ -1,8 +1,15 @@
-<div class="wrapper">
-<div class="side-bar">
-  <%= render "side_bar" %>
-  </div>
-  <div class="hobby">
-  <%= render "main_hobby" %>
-  </div>
-  </div>
+<%= form_with url: "/posts", method: :post, local: true do |form| %>
+  <%= form.label :hobby, "趣味の内容" %>
+  <%= form.text_field :hobby %>
+
+  <%= form.label :required_time, "所要時間（分）" %>
+  <%= form.number_field :required_time %>
+
+  <%= form.label :budget, "予算" %>
+  <%= form.text_field :budget %>
+
+  <%= form.label :number_of_people, "参加人数" %>
+  <%= form.number_field :number_of_people %>
+
+  <%= form.submit '登録する' %>
+<% end %>
