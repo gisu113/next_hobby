@@ -1,41 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>NEXT HOBBY</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
-    <h1>NEXT HOBBY</h1>
-    <% if current_user %>
-     <div class="header-buttons">
-      <%= link_to '新規登録', '/posts/new', class: 'button' %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'button' %>
-      <%= link_to '趣味一覧', '/hobbies', class: 'button' %> <!-- 趣味一覧ボタンの追加 -->
-      <%= link_to 'ランキング', '/rankings', class: 'button' %> <!-- ランキングボタンの追加 -->
-      </div>
-    <% else %>
-    <div class="header-buttons">
-      <%= link_to '新規登録', '/posts/new', class: 'button' %>
-      <%= link_to 'ログイン', new_user_session_path, class: 'button' %>
-      <%= link_to '趣味一覧', '/hobbies', class: 'button' %> <!-- 趣味一覧ボタンの追加 -->
-      <%= link_to 'ランキング', '/rankings', class: 'button' %> <!-- ランキングボタンの追加 -->
-      </div>
-    <% end %>
-  </header>
-  <main>
-    <% @posts.each do |post| %>
-      <div class="post">
-        <div class="post-date">
-          <span class="label">投稿日時：</span><%= post.created_at %>
-        </div>
-        <div class="post-content">
-          <%= post.content %>
-        </div>
-      </div>
-    <% end %>
-  </main>
-</body>
-</html>
+<div class="wrapper">
+<div class="side-bar">
+  <%= render "side_bar" %>
+  </div>
+  <div class="hobby">
+  <%= render "main_hobby" %>
+  </div>
+  </div>
