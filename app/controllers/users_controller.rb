@@ -8,4 +8,8 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def user_params
+    params.require(:user).permit(:nickname, :email,)
+  end
+
 end
