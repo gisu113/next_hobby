@@ -12,7 +12,9 @@ body {
 header {
   background-color: #333;
   color: #fff;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem 0;
 }
 
@@ -41,6 +43,15 @@ h1 {
   border-radius: 4px;
   margin-bottom: 0.5rem;
   width: 150px; /* ボタンの横幅を調整 */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }
 
 /* 投稿のスタイル */

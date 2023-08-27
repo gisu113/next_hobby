@@ -25,18 +25,3 @@
       <%= link_to 'ランキング', '/rankings', class: 'button' %> <!-- ランキングボタンの追加 -->
       </div>
     <% end %>
-  </header>
-  <main>
-    <% @posts.each do |post| %>
-      <div class="post">
-        <div class="post-date">
-          <span class="label">投稿日時：</span><%= post.created_at %>
-        </div>
-        <div class="post-content">
-          <%= link_to post.hobby, post_path(post) %> 
-        </div>
-      </div>
-    <% end %>
-  </main>
-</body>
-</html>
