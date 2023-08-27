@@ -33,7 +33,7 @@
           <span class="label">投稿日時：</span><%= post.created_at %>
         </div>
         <div class="post-content">
-          <%= post.content %>
+          <%= link_to post.hobby, post_path(post) %> 
         </div>
       </div>
     <% end %>
