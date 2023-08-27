@@ -1,11 +1,15 @@
-<div class="contents row">
-  <div class="container">
-    <h3>登録する</h3>
-    <%= form_with(model: @tweet, local: true) do |form| %>
-      <%= form.text_field :name, placeholder: "Nickname" %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
-      <%= form.text_area :text, placeholder: "text", rows: "10" %>
-      <%= form.submit "SEND" %>
-    <% end %>
-  </div>
-</div>
+<%= form_with url: "/posts", method: :post, local: true do |form| %>
+  <%= form.label :hobby, "趣味の内容" %>
+  <%= form.text_field :hobby %>
+
+  <%= form.label :required_time, "所要時間（分）" %>
+  <%= form.number_field :required_time %>
+
+  <%= form.label :budget, "予算" %>
+  <%= form.text_field :budget %>
+
+  <%= form.label :number_of_people, "参加人数" %>
+  <%= form.number_field :number_of_people %>
+
+  <%= form.submit '登録する' %>
+<% end %>
