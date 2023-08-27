@@ -26,6 +26,11 @@ h1 {
   margin-top: 1rem;
 }
 
+.header__bar a {
+  text-decoration: none; /* リンクの下線を非表示にする */
+  color: inherit; /* リンクの色を親要素の色に合わせる（省略可） */
+}
+
 .button {
   display: block;
   padding: 0.3rem 0.8rem;
