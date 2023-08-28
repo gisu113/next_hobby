@@ -83,3 +83,17 @@ main {
   margin: 0 auto;
   padding: 2rem;
 }
+
+.input-birth-wrap {
+  text-align: center;
+}
+
+.birth-fields {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.select-birth {
+  /* Add your styling for select input here */
+}
