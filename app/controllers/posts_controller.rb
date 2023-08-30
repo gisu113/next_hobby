@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @users = User.all
   end
 
   def new
@@ -11,13 +12,20 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
+  end
+
+
   def show
     @post = Post.find(params[:id])
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
+    @posts = Post.new(post_params)
+    if @posts.save
       redirect_to '/'
     else
       render :new
@@ -25,9 +33,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-    redirect_to root_path
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
   
   private
