@@ -1,25 +1,45 @@
-<%= form_with(model: @post, local: true) do |form| %>
-  <div class="form-group">
-    <%= form.label :hobby, "趣味の内容" %>
-    <%= form.text_field :hobby %>
-  </div>
+<style>
+  /* コンテナを中央に配置するスタイル */
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ビューポートの高さいっぱいに広がる */
+  }
 
-  <div class="form-group">
-    <%= form.label :required_time, "所要時間（分）" %>
-    <%= form.number_field :required_time %>
-  </div>
+  .form-box {
+    max-width: 400px; /* フォームボックスの最大幅 */
+    width: 100%; /* フォームボックスの幅を100%に */
+    padding: 20px;
+  }
+</style>
 
-  <div class="form-group">
-    <%= form.label :budget, "予算" %>
-    <%= form.text_field :budget %>
-  </div>
+<div class="form-container">
+  <div class="form-box">
+    <%= form_with(model: @post, local: true) do |form| %>
+      <div class="form-group">
+        <%= form.label :hobby, "趣味の内容" %>
+        <%= form.text_field :hobby %>
+      </div>
 
-  <div class="form-group">
-    <%= form.label :number_of_people, "参加人数" %>
-    <%= form.number_field :number_of_people %>
-  </div>
+      <div class="form-group">
+        <%= form.label :required_time, "所要時間（分）" %>
+        <%= form.number_field :required_time %>
+      </div>
 
-  <div class="form-group">
-    <%= form.submit '登録する' %>
+      <div class="form-group">
+        <%= form.label :budget, "予算" %>
+        <%= form.text_field :budget %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :number_of_people, "参加人数" %>
+        <%= form.number_field :number_of_people %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit '登録する' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
