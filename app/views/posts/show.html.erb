@@ -10,14 +10,12 @@
       <p>参加人数: <%= @post.number_of_people %></p>
     </div>
     <ul class="more_list">
-      <% if current_user && current_user.id == @post.user_id %> <!-- ログインユーザーと投稿ユーザーが同じ場合に表示 -->
         <li>
           <%= link_to '編集', edit_post_path(@post) %>
         </li>
         <li>
           <%= link_to '削除', post_path(@post), data: { turbo_method: :delete }, method: :delete %>
         </li>
-      <% end %>
     </ul>
   </div>
 </div>
