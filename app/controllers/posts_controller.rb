@@ -1,7 +1,15 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    @users = User.all
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def new
@@ -15,7 +23,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to root_path
+    redirect_to post_path
   end
 
 
@@ -23,14 +31,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def create
-    @posts = Post.new(post_params)
-    if @posts.save
-      redirect_to '/'
-    else
-      render :new
-    end
-  end
 
   def update
     @post = Post.find(params[:id])

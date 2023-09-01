@@ -1,3 +1,19 @@
+<style>
+  /* コンテナを中央に配置するスタイル */
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ビューポートの高さいっぱいに広がる */
+  }
+
+  .form-box {
+    max-width: 400px; /* フォームボックスの最大幅 */
+    width: 100%; /* フォームボックスの幅を100%に */
+    padding: 20px;
+  }
+</style>
+
 <div class="form-container">
   <div class="form-box">
     <%= form_with(model: @post, local: true) do |form| %>
@@ -20,10 +36,10 @@
         <%= form.label :number_of_people, "参加人数" %>
         <%= form.number_field :number_of_people %>
       </div>
-
-      <div class="form-group">
-        <%= form.submit '登録する' %>
-      </div>
+      
+       <div class='actions'>
+          <%= form.submit "新規登録", class: 'btn'%>
+        </div>
     <% end %>
   </div>
 </div>
