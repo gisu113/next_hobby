@@ -3,4 +3,5 @@ class Post < ApplicationRecord
   validates :required_time, presence: true
   validates :budget, presence: true
   validates :number_of_people, presence: true
+  has_many :likes
 end
