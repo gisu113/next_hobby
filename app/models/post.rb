@@ -4,4 +4,8 @@ class Post < ApplicationRecord
   validates :budget, presence: true
   validates :number_of_people, presence: true
   has_many :likes
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
 end
