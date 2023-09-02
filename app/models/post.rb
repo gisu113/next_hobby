@@ -1,6 +1,4 @@
 class Post < ApplicationRecord
-  
-
   validates :hobby, presence: true
   validates :required_time, presence: true
   validates :budget, presence: true
