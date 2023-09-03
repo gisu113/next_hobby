@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  belongs_to :user
   validates :hobby, presence: true
   validates :required_time, presence: true
   validates :budget, presence: true

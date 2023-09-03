@@ -8,6 +8,11 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def show
+    @nickname = current_user.nickname
+    @posts = current_user.posts
+  end
+
   def user_params
     params.require(:user).permit(:nickname, :email,)
   end

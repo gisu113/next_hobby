@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_02_170058) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_03_050111) do
   create_table "likes", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "post_id"
@@ -27,6 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_170058) do
     t.integer "number_of_people"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -47,4 +49,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_170058) do
 
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "posts", "users"
 end

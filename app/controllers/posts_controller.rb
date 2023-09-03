@@ -1,16 +1,19 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @users = User.all
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params) # ユーザーとの関連付けを行う
+  
     if @post.save
       redirect_to posts_path
     else
       render :new
     end
   end
+  
 
   def new
     @post = Post.new
