@@ -9,6 +9,7 @@
       <p>予算: <%= @post.budget %> 円</p>
       <p>参加人数: <%= @post.number_of_people %></p>
     </div>
+     <% if user_signed_in? && current_user.id == @post.user_id %>   
     <ul class="more_list">
         <li>
           <%= link_to '編集', edit_post_path(@post) %>
@@ -16,6 +17,7 @@
         <li>
           <%= link_to '削除', post_path(@post), data: { turbo_method: :delete }, method: :delete %>
         </li>
+         <% end %>
     </ul>
   </div>
 </div>
