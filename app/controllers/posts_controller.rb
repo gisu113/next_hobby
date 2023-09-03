@@ -44,6 +44,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def rankings
+    @rankings = Post.joins(:likes).group(:id).order('COUNT(likes.id) DESC')
+  end
+
   
   private
   def post_params
