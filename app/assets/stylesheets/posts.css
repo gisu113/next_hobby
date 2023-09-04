@@ -10,7 +10,3 @@
   background-color: #FFFFFF;
   width: calc(100vw - 300px);
 }
-
-.form-group {
-  margin-bottom: 1rem; /* 各フォーム要素の下にマージンを追加 */
-}

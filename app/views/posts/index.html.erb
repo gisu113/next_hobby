@@ -14,10 +14,10 @@
       </div>
       <% if user_signed_in? && current_user.id == post.user_id %>
       <li>
-        <%= link_to '編集', edit_post_path(post.id), class: 'button'%> 
+        <%= link_to '編集', edit_post_path(post.id), class: 'hobby-btn'%> 
       </li>
       <li>
-        <%= link_to '削除', post_path(post.id), data: { turbo_method: :delete }, class: 'button'%>
+        <%= link_to '削除', post_path(post.id), data: { turbo_method: :delete }, class: 'hobby-btn'%>
       </li>
       <% end %>
       <div class="post-content">
