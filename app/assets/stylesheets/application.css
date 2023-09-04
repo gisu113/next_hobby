@@ -1,6 +1,4 @@
 /* application.css */
-
-/* ページ全体のスタイル */
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
@@ -92,4 +90,42 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+/* いいねのスタイル */
+.like-btn {
+  font-size: 15px;
+  color: #e54747;
+ }
+ 
+ .unlike-btn {
+  font-size: 15px;
+  color: #808080;
+ }
+/* 投稿ページのスタイル */
+ .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* ビューポートの高さいっぱいに広がる */
+}
+
+.form-box {
+  max-width: 400px; /* フォームボックスの最大幅 */
+  width: 100%; /* フォームボックスの幅を100%に */
+  padding: 20px;
+}
+
+/* ランキングページのスタイル */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px; /* 適切なマージンを設定して中央に配置します */
+}
+
+/* 趣味への下線を削除 */
+.center a {
+  text-decoration: none;
 }

@@ -8,20 +8,20 @@
 </head>
 <body>
   <header>
-    <% if current_user %>
-     <div class="header-buttons">
-      <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'button'%>
-      <%= link_to '趣味登録', '/posts/new', class: 'button' %> <!-- 趣味一覧ボタンの追加 -->
-      <%= link_to '趣味一覧', '/posts', class: 'button' %> <!-- 趣味一覧ボタンの追加 -->
-      <%= link_to '趣味検索', '/posts', class: 'button' %>
-      <%= link_to 'ランキング', '/rankings', class: 'button' %> <!-- ランキングボタンの追加 -->
-      </div>
-    <% else %>
-    <div class="header-buttons">
-      <%= link_to '新規登録', new_user_registration_path, class: 'button' %>
-      <%= link_to 'ログイン', new_user_session_path, class: 'button' %>
-      <%= link_to '趣味検索', '/posts', class: 'button' %>
-      <%= link_to '趣味一覧', '/posts', class: 'button' %> <!-- 趣味一覧ボタンの追加 -->
-      <%= link_to 'ランキング', '/rankings', class: 'button' %> <!-- ランキングボタンの追加 -->
-      </div>
-    <% end %>
+  <% if current_user %>
+  <div class="header-buttons">
+    <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: 'button' %>
+    <%= link_to '趣味登録', new_post_path, class: 'button' %>
+    <%= link_to '趣味一覧', posts_path, class: 'button' %> <!-- 趣味一覧ボタンを追加 -->
+    <%= link_to '趣味検索', '/search', class: 'button' %>
+    <%= link_to 'ランキング', rankings_path, class: 'button' %> <!-- ランキングボタンを追加 -->
+  </div>
+<% else %>
+  <div class="header-buttons">
+    <%= link_to '新規登録', new_user_registration_path, class: 'button' %>
+    <%= link_to 'ログイン', new_user_session_path, class: 'button' %>
+    <%= link_to '趣味検索', posts_path, class: 'button' %>
+    <%= link_to '趣味一覧', '/search', class: 'button' %> <!-- 趣味一覧ボタンを追加 -->
+    <%= link_to 'ランキング', rankings_path, class: 'button' %> <!-- ランキングボタンを追加 -->
+  </div>
+<% end %>

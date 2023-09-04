@@ -34,6 +34,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def search
+    @duration = params[:duration]
+    @participants = params[:participants]
+    @budget = params[:budget]
+    
+    # 所要時間、人数、予算を条件として検索クエリを実行
+    @results = Post.where("duration <= ? AND participants <= ? AND budget <= ?", @duration, @participants, @budget)
+  end
+
 
   def update
     @post = Post.find(params[:id])
