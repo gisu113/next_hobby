@@ -13,13 +13,10 @@
         <span class="label">投稿日時：</span><%= post.created_at %>
       </div>
       <% if user_signed_in? && current_user.id == post.user_id %>
-      <li>
-        <%= link_to '編集', edit_post_path(post.id), class: 'hobby-btn'%> 
-      </li>
-      <li>
-        <%= link_to '削除', post_path(post.id), data: { turbo_method: :delete }, class: 'hobby-btn'%>
-      </li>
-      <% end %>
+  <!-- 不要なドットを削除 -->
+  <%= link_to '編集', edit_post_path(post.id), class: 'hobby-btn' %> 
+  <%= link_to '削除', post_path(post.id), data: { turbo_method: :delete }, class: 'hobby-btn' %>
+<% end %>
       <div class="post-content">
         <%= link_to post.hobby, post_path(post) %> 
       </div>
