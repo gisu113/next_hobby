@@ -16,9 +16,6 @@ header {
   padding: 1rem 0;
 }
 
-h1 {
-  margin: 0;
-}
 
 
 .header-buttons {
@@ -153,4 +150,31 @@ ul {
   font-size: 18px; /* フォントサイズを大きくする（適切なサイズに調整） */
   margin-bottom: 4vh;
   text-decoration: none; /* 下線を消す */
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 24px; /* h1要素のフォントサイズを大きくする */
+  margin-bottom: 20px; /* h1要素の下のマージンを追加 */
+}
+
+ul {
+  list-style: none; /* リストのデフォルトのマーカーを削除 */
+  padding: 0; /* リストの内部余白を削除 */
+}
+
+li {
+  font-size: 18px; /* li要素のフォントサイズを大きくする */
+  margin-bottom: 10px; /* li要素の下のマージンを追加 */
+}
+
+span {
+  font-size: 16px; /* span要素のフォントサイズを大きくする */
 }
