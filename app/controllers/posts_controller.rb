@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @posts = Post.all
@@ -35,16 +36,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def search
-    @duration = params[:duration]
-    @participants = params[:participants]
-    @budget = params[:budget]
-    
-    # 所要時間、人数、予算を条件として検索クエリを実行
-    @results = Post.where("duration <= ? AND participants <= ? AND budget <= ?", @duration, @participants, @budget)
-  end
-
-
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
@@ -62,5 +53,11 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:hobby, :required_time, :budget, :number_of_people)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
