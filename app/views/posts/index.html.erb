@@ -1,0 +1,39 @@
+<style>
+  /* クラス名やセレクタは必要に応じて調整してください */
+  .post-content a {
+    text-decoration: none; /* 下線を消すスタイル */
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</header>
+<main>
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="post-date">
+        <span class="label">投稿日時：</span><%= post.created_at %>
+      </div>
+      <div class="post-content">
+        <%= link_to post.hobby, post_path(post) %> 
+      </div>
+      <div id="like-btn<%= post.id %>">
+        <% if user_signed_in? && post.liked_by?(current_user) %>
+          <%= link_to post_likes_path(post.id), data: { turbo_method: :delete }, class: "post_likes" do %>
+            <i class="fas fa-heart like-btn" ></i>
+          <% end %>
+        <% else %>
+          <%= link_to post_likes_path(post.id), data: { turbo_method: :post }, class: "post_likes" do %>
+            <i class="far fa-heart unlike-btn"></i>
+          <% end %>
+        <% end %>
+        <!-- いいねのカウントを表示 -->
+        <%= post.likes.count %> いいね
+      </div>
+      <% if user_signed_in? && current_user.id == post.user_id %>
+  <!-- 不要なドットを削除 -->
+  <%= link_to '編集', edit_post_path(post.id), class: 'hobby-btn' %> 
+  <%= link_to '削除', post_path(post.id), data: { turbo_method: :delete }, class: 'hobby-btn' %>
+<% end %>
+    </div>
+  <% end %>
+</main>
+</body>

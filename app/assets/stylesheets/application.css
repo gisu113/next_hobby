@@ -1,15 +1,180 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* application.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* ヘッダーのスタイル */
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+
+
+.header-buttons {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.header__bar a {
+  text-decoration: none; /* リンクの下線を非表示にする */
+  color: inherit; /* リンクの色を親要素の色に合わせる（省略可） */
+}
+
+.button {
+  display: block;
+  padding: 0.3rem 0.8rem;
+  font-size: 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  width: 150px; /* ボタンの横幅を調整 */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 投稿のスタイル */
+.post {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.post-content {
+  margin-top: 0.5rem;
+}
+
+/* メインコンテンツのスタイル */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.input-birth-wrap {
+  text-align: center;
+}
+
+.birth-fields {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* いいねのスタイル */
+.like-btn {
+  font-size: 15px;
+  color: #e54747;
+ }
+ 
+ .unlike-btn {
+  font-size: 15px;
+  color: #808080;
+ }
+/* 投稿ページのスタイル */
+ .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* ビューポートの高さいっぱいに広がる */
+}
+
+.form-box {
+  max-width: 400px; /* フォームボックスの最大幅 */
+  width: 100%; /* フォームボックスの幅を100%に */
+  padding: 20px;
+}
+
+/* ランキングページのスタイル */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px; /* 適切なマージンを設定して中央に配置します */
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 趣味への下線を削除 */
+.center a {
+  text-decoration: none;
+}
+
+/* 趣味投稿ページのスタイル */
+.form-group {
+  margin-bottom: 1rem; /* 各フォーム要素の下にマージンを追加 */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* ボタン間のスペースを均等に分配 */
+}
+
+.hobby-btn {
+  background: #3498db; /* 青色に変更 */
+  border: 1px solid #3498db; /* 枠線も青色に変更 */
+  color: #fff;
+  width: 150px; /* 幅を大きくする（適切なサイズに調整） */
+  height: 60px; /* 高さを大きくする（適切なサイズに調整） */
+  font-size: 18px; /* フォントサイズを大きくする（適切なサイズに調整） */
+  margin-bottom: 4vh;
+  text-decoration: none; /* 下線を消す */
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 24px; /* h1要素のフォントサイズを大きくする */
+  margin-bottom: 20px; /* h1要素の下のマージンを追加 */
+}
+
+ul {
+  list-style: none; /* リストのデフォルトのマーカーを削除 */
+  padding: 0; /* リストの内部余白を削除 */
+}
+
+li {
+  font-size: 18px; /* li要素のフォントサイズを大きくする */
+  margin-bottom: 10px; /* li要素の下のマージンを追加 */
+}
+
+span {
+  font-size: 16px; /* span要素のフォントサイズを大きくする */
+}

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get 'posts', to: 'posts#index'
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'users#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/rankings', to: 'posts#rankings'
+ 
+  devise_for :users
+  resources :posts, only: [:new, :index, :create, :show, :destroy, :edit, :update]
+  resources :posts, only: [:index, :new, :create] do
+    resource :likes, only: [:create, :destroy]
+  end
 end
