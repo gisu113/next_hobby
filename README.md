@@ -1,24 +1,23 @@
 # アプリケーション名
+NEXT HOBBY
+#　アプリケーション概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# URL
 
-Things you may want to cover:
+# テスト用アカウント
 
-* Ruby version
+# 利用方法
 
-* System dependencies
+# アプリケーションを作成した背景
 
-* Configuration
+# 洗い出した要件
 
-* Database creation
+# データベース設計
 
-* Database initialization
+# 画面遷移図
 
-* How to run the test suite
+# 開発環境
 
-* Services (job queues, cache servers, search engines, etc.)
+# ローカルでの動作方法
 
-* Deployment instructions
-
-* ...
+# 工夫したポイント
