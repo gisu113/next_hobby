@@ -78,3 +78,7 @@ gem 'devise'
 gem 'active_hash'
 
 gem 'font-awesome-rails'
+
+group :production do
+  gem 'pg'
+end
